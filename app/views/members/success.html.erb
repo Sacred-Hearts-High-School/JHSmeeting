@@ -1,0 +1,38 @@
+<p id="notice"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> <%= notice %></p>
+
+<p>
+  多謝您的報名，研習當天見！
+</p>
+<br />
+
+<table class="table table-bordered" style="white-space: nowrap">
+  <thead>
+  <tr>
+    <th>序號</th>
+    <th>姓名</th>
+    <th>學校</th>
+    <th>職稱</th>
+    <th>身份別</th>
+    <th>餐食</th>
+    <th>交通工具</th>
+    <th>分組討論</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @members.each do |member| %>
+      <tr>
+        <td><%= member.id %></td>
+        <td><%= member.name %></td>
+        <td><%= member.school %></td>
+        <td><%= member.title %></td>
+        <td><%= personTypeStr(member.person_type) %></td>
+        <td><%= foodStr(member.food) %></td>
+        <td><%= transportationStr(member.transportation) %></td>
+        <td><%= groupStr(member.group) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>

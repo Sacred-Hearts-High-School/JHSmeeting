@@ -1,0 +1,63 @@
+<%= current_user.name %>：<br /> 歡迎光臨管理介面，可<%= link_to "點此登出", "/logout", method: :delete, data: { confirm: '你確定要登出嗎？' }, :class=>"btn btn-warning" %> 。
+
+<br /><br />
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">各項統計資料</h3>
+  </div>
+  <div class="panel-body">
+    <%= @msg.html_safe %>
+  </div>
+</div>
+
+
+<h2>印出所有已報名清單</h2>
+
+<table class="table table-bordered" style="white-space: nowrap">
+  <thead>
+    <tr>
+      <th>序號</th>
+      <th>姓名</th>
+      <th>學校</th>
+      <th>職稱</th>
+      <th>身份證</th>
+      <th>市話</th>
+      <th>手機</th>
+      <th>電子郵件</th>
+      <th>身份別</th>
+      <th>住宿房間</th>
+      <th>共住夥伴</th>
+      <th>住宿日期</th>
+      <th>餐食</th>
+      <th>交通工具</th>
+      <th>分組討論</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= member.id %></td>
+        <td><%= member.name %></td>
+        <td><%= member.school %></td>
+        <td><%= member.title %></td>
+        <td>*****</td>
+        <td><%= member.office_phone %></td>
+        <td><%= member.mobile_phone %></td>
+        <td><%= member.email %></td>
+        <td><%= personTypeStr(member.person_type) %></td>
+        <td><%= roomTypeStr(member.room_type) %></td>
+        <td><%= member.room_partiner %></td>
+        <td><%= roomDateStr(member.room_date) %></td>
+        <td><%= foodStr(member.food) %></td>
+        <td><%= transportationStr(member.transportation) %></td>
+        <td><%= groupStr(member.group) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '建立新報名資料', new_member_path, :class=>'btn btn-primary' %>

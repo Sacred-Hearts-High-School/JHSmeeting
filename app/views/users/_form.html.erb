@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
+
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :account %>
+    <%= f.input :name %>
+    <%= f.input :password %>
+    <%= f.input :is_admin, :inline_label=>true, :label=>false ,:as => :boolean  %>
+  </div>
+
+    <br />
+  <div class="form-actions">
+    <%= f.button :submit, "建立管理者" %>
+  </div>
+<% end %>
+
+    </div>
+  </div>

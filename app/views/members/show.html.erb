@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>姓名:</strong>
+  <%= @member.name %>
+</p>
+
+<p>
+  <strong>身份證字號:</strong>
+  <%= @member.personal_id %>
+</p>
+
+<p>
+  <strong>學校:</strong>
+  <%= @member.school %>
+</p>
+
+<p>
+  <strong>職稱:</strong>
+  <%= @member.title %>
+</p>
+
+
+<p>
+  <strong>辦公室電話:</strong>
+  <%= @member.office_phone %>
+</p>
+
+<p>
+  <strong>手機號碼:</strong>
+  <%= @member.mobile_phone %>
+</p>
+
+<p>
+  <strong>電子郵件:</strong>
+  <%= @member.email %>
+</p>
+
+
+<p>
+  <strong>身份別:</strong>
+  <%= @member.person_type %>
+</p>
+
+<p>
+  <strong>房間型態:</strong>
+  <%= @member.room_type %>
+</p>
+
+<p>
+  <strong>共住夥伴:</strong>
+  <%= @member.room_partiner %>
+</p>
+
+<p>
+  <strong>住宿日期:</strong>
+  <%= @member.room_date %>
+</p>
+
+<p>
+  <strong>餐食:</strong>
+  <%= @member.food %>
+</p>
+
+<p>
+  <strong>交通方式:</strong>
+  <%= @member.transportation %>
+</p>
+
+<p>
+  <strong>分組討論志願序:</strong>
+  <%= @member.group %>
+</p>
+
+<%= link_to '編輯', edit_member_path(@member),:class=>'btn btn-primary' %> |
+<%= link_to '返回', members_path, :class=>"btn btn-primary" %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>帳號:</strong>
+  <%= @user.account %>
+</p>
+
+<p>
+  <strong>名稱</strong>:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>密碼:</strong>
+  <%= @user.password %>
+</p>
+
+<p>
+  <strong>最高管理權:</strong>
+  <%= @user.is_admin %>
+</p>
+
+<%= link_to '編輯', edit_user_path(@user) %> |
+<%= link_to '返回', users_path %>

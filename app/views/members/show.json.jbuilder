@@ -1,0 +1,1 @@
+json.extract! @member, :id, :name, :title, :personal_id, :office_phone, :mobile_phone, :address, :email, :school, :person_type, :room_type, :room_partiner, :room_date, :food, :transportation, :car_id, :group, :created_at, :updated_at

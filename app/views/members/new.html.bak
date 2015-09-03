@@ -1,0 +1,91 @@
+  <h2>2015天主教學校經營領導研習營</h2>
+
+  <%= simple_form_for @member, :html=>{:class=>'form-horizontal'} do |f| %>
+
+      <% if @member.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+            <ul>
+              <% @member.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+
+      <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
+      <legend><i class="glyphicon glyphicon-globe"></i> 新增報名資料</legend>
+      <form action="#" method="post" class="form" role="form">
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <%= f.input :name, :label=>false, :autofocus=>true, :input_html=>{:class=>"form-control", :placeholder=>"姓名",:required=>true} %><br>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <%= f.input :personal_id, :input_html=>{:placeholder=>"身份證字號", :class=>"form-control",:required=>true},:label=>false %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <%= f.input :school, :input_html=>{:placeholder=>"就職學校", :class=>"form-control",:required=>false},:label=>false %>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <%= f.input :title, :label=>false, :input_html=>{:class=>"form-control", :placeholder=>"職稱",:required=>true} %><br>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <%= f.input :office_phone, :input_html=>{:placeholder=>"辦公室電話", :class=>"form-control",:required=>false},:label=>false %>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <%= f.input :mobile_phone, :input_html=>{:placeholder=>"手機號碼", :class=>"form-control",:required=>false},:label=>false %>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+        </div>
+
+        <%= f.input :email, :input_html=>{:placeholder=>"電子信箱",:class=>"form-control",:required=>false},:type=>"email",:label=>false %>
+        <br />
+        <%= f.input :person_type,:prompt=>"請選擇身份別",:input_html=>{:class=>"form-control",:required=>true},:collection=>{"神父（共祭者煩請自備大白衣及白色領帶）"=>1,"修女"=>2,"非神職人員"=>3},:label=>false %>
+
+        <%= f.input :room_type,:prompt=>"請選擇住宿選項",:input_html=>{:class=>"form-control",:required=>true},:collection=>{"自理"=>1,"單人套房（1600元）"=>2,"雙人套房（900元，自行填寫共住夥伴）"=>3,"雙人住宿（900元，由主辦單位安排共住夥伴）"=>4},:label=>false %>
+        <%= f.input :room_partiner, :input_html=>{:placeholder=>"指定共住夥伴姓名（留空白則由主辦單位安排）", :class=>"form-control",:required=>false},:label=>false %>
+        <%= f.input :room_date, :prompt=>"選擇住宿日期", :input_html=>{:class=>"form-control",:required=>true},:collection=>{"自理"=>0,"10/13~14住宿兩天"=>1,"10/14住宿一天"=>2},:label=>false %>
+
+        <label class="radio-inline">
+          <input type="radio" name="food" id="inlineCheckbox1" value="1" />
+          葷食
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="food" id="inlineCheckbox2" value="2" />
+          素食
+        </label>
+        <br /><br /><br />
+
+        <%= f.input :food, :collection=>{"葷食"=>1,"素食"=>2}, :as=>"radio_buttons",:label=>false  %>
+
+
+        <%= f.input :transportation,:prompt=>"請選擇交通工具",:input_html=>{:class=>"form-control",:required=>true},
+                    :collection=>{"自行前往不需停車位"=>1,"自行前往需備停車位"=>2,"搭乘台鐵至斗六站由正心接送（09:00後站出口）"=>3,
+                                  "搭乘高鐵至台中烏日站由正心接送（08:30於6號出口）"=>4,"搭乘高鐵至嘉義站由正心接送（08:45於一樓大廳）"=>5},:label=>false %>
+
+
+        <%= f.input :group,:prompt=>"請選擇分組討論組別志願序",:input_html=>{:class=>"form-control",:required=>true},
+                    :collection=>{"A、B、C"=>1,"A、C、B"=>2,"B、A、C"=>3,"B、C、A"=>4,"C、A、B"=>5,"C、B、A"=>6}, :label=>false %>
+
+
+        <br />
+        <br />
+        <button class="btn btn-lg btn-primary btn-block" type="submit">
+          送出報名資料</button>
+      </form>
+    </div>
+  </div>
+
+
+<% end %>
+

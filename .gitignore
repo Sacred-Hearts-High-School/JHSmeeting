@@ -33,3 +33,9 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
+
+
+ # Databases
+ /config/database.yml
+ /config/environments/product.rb
+

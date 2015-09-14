@@ -1,7 +1,4 @@
-<%= current_user.name %>：<br /> 歡迎光臨管理介面，可<%= link_to "修改管理者帳號", users_path, :class=>"btn btn-info" %>
-<%= link_to "點此登出", "/logout", method: :delete, data: { confirm: '你確定要登出嗎？' }, :class=>"btn btn-warning" %> 。
-
-<br /><br />
+<%= render 'navbar' %>
 
 <div class="panel panel-primary">
   <div class="panel-heading">

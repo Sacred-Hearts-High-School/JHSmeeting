@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'members/list' => 'members#list'
   get 'members/success' => 'members#success'
+  get 'members/mailing' => 'members#mailing'
   resources :members
 
 

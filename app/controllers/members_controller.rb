@@ -3,7 +3,7 @@ class MembersController < ApplicationController
   before_action :login_required, except: [:new, :create, :success]
   before_action :login_required, :admin_required, except: [:new, :create, :success, :list]
   before_action :set_member, only: [:show, :edit, :update, :destroy]
-  before_action :statistics, only: [:index, :list]
+  before_action :statistics, only: [:index, :list, :mailing]
 
   # GET /members
   # GET /members.json
@@ -13,6 +13,9 @@ class MembersController < ApplicationController
   # GET /members/1
   # GET /members/1.json
   def show
+  end
+
+  def mailing
   end
 
   def list

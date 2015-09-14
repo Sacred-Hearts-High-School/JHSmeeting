@@ -1,0 +1,43 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "管理者選單", members_path, :class=>"navbar-brand" %></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li><%= link_to "修改管理者帳號", users_path %></li>
+        <li><%= link_to "產生郵件清單", members_mailing_path %></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">排序依據<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">依報名順序</a></li>
+            <li><a href="#">依姓名</a></li>
+            <li><a href="#">依學校</a></li>
+            <li><a href="#">依討論組別</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">上面這些功能還沒設計好</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">請勿使用</a></li>
+          </ul>
+        </li>
+      </ul>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "登出", "/logout", method: :delete, data: { confirm: '你確定要登出嗎？' } %></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+

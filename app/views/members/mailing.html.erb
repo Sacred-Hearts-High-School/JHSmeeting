@@ -1,0 +1,16 @@
+<%= render 'navbar' %>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">郵件清單（複製貼入gmail收件人欄位即可）</h3>
+  </div>
+  <div class="panel-body">
+
+
+    <% @members.each do |member| %>
+        <%= member.name %><%= member.title %> &lt;<%= member.email %>&gt;,<br />
+    <% end %>
+
+  </div>
+</div>
+
